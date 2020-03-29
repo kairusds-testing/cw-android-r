@@ -1,4 +1,4 @@
-## Elements of Android $
+## Elements of Android R
 
 [*Elements of Android R*](https://commonsware.com/R/)
 is a book focusing on the changes in Android coming in the R release.
