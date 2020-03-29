@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">Background Location</string>
+  <string name="background">Grant Background Location Access</string>
+  <string name="no_perms">No permissions granted</string>
+  <string name="fine_perm">Fine location permission granted</string>
+  <string name="bg_perm">Background permission granted</string>
+</resources>

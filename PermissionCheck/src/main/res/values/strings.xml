@@ -1,0 +1,9 @@
+<resources>
+  <string name="app_name">Permission Check</string>
+  <string name="permission_caption">Fine Location Permission</string>
+  <string name="request_location">Request Location</string>
+  <string name="error_toast">Ick! Something went wrong!</string>
+  <string name="location">%f, %f</string>
+  <string name="launch">Launch Another Activity</string>
+  <string name="title">Permission Check: %x</string>
+</resources>

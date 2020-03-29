@@ -1,0 +1,27 @@
+<resources>
+  <string name="app_name">Forensic Pathologist</string>
+  <string name="importance_cached">Cached</string>
+  <string name="importance_foreground">Foreground</string>
+  <string name="importance_foreground_service">Foreground Service</string>
+  <string name="importance_top_sleeping">Top Sleeping</string>
+  <string name="importance_visible">Visible</string>
+  <string name="importance_perceptible">Perceptible</string>
+  <string name="importance_cant_save_state">Can\'t Save State</string>
+  <string name="importance_service">Service</string>
+  <string name="importance_gone">Gone</string>
+  <string name="shrug">¯\_(ツ)_/¯</string>
+  <string name="reason_anr">ANR</string>
+  <string name="reason_crash">Crash</string>
+  <string name="reason_crash_native">Native Crash</string>
+  <string name="reason_excessive_resource_usage">Excessive Resource Usage</string>
+  <string name="reason_exit_self">Self-Destruct (%d)</string>
+  <string name="reason_init_failure">Init Failure</string>
+  <string name="reason_low_memory">Low Memory</string>
+  <string name="reason_permission_change">Permission Change</string>
+  <string name="reason_signaled">OS Signal</string>
+  <string name="reason_other">Other</string>
+  <string name="importance">Importance:</string>
+  <string name="memory">Memory (PSS/RSS):</string>
+  <string name="pss_rss">%d KB / %d KB</string>
+  <string name="empty">Hi! You need to kill this app somehow, then run it again, to see results!</string>
+</resources>

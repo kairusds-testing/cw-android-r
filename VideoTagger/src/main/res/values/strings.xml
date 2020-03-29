@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">Video Tagger</string>
+  <string name="tags">Tags</string>
+  <string name="set_tags">Set Tags</string>
+</resources>

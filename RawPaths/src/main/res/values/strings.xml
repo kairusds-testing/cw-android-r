@@ -1,0 +1,8 @@
+<resources>
+  <string name="empty">No files found!</string>
+  <string name="error">Ick! Something went wrong!</string>
+  <string name="menu_all_access">All Access</string>
+  <string name="volumes">Volumes</string>
+  <string name="sorry">Sorry, this is only available on Android R!</string>
+  <string name="already_permission">You should already have permission!</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/volumes"
+    android:icon="@drawable/ic_storage"
+    android:title="@string/volumes"
+    app:showAsAction="ifRoom|withText">
+    <menu>
+
+      <group
+        android:id="@+id/volumeGroup"
+        android:checkableBehavior="single">
+      </group>
+    </menu>
+  </item>
+
+  <item
+    android:id="@+id/allAccess"
+    android:icon="@drawable/ic_all_inclusive"
+    android:title="@string/menu_all_access"
+    app:showAsAction="ifRoom|withText" />
+</menu>

@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">EmbedServer</string>
+  <string name="caption"># of button clicks: %d</string>
+  <string name="hello">OK, now run EmbedClient!</string>
+</resources>

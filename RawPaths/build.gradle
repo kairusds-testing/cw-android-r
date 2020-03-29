@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+  compileSdkVersion 'android-R'
+  buildToolsVersion "30.0.0 rc2"
+
+  defaultConfig {
+    applicationId "com.commonsware.android.r.rawpaths"
+    minSdkVersion 28
+    targetSdkVersion 28
+    versionCode 1
+    versionName "1.0"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  flavorDimensions "scenario"
+
+  productFlavors {
+    alfa {
+      dimension "scenario"
+      applicationIdSuffix ".alfa"
+      targetSdkVersion 28
+      resValue "bool", "optOut", "true"
+      resValue "string", "app_name", "Raw A Paths"
+    }
+
+    bravo {
+      dimension "scenario"
+      applicationIdSuffix ".bravo"
+      targetSdkVersion 29
+      resValue "bool", "optOut", "true"
+      resValue "string", "app_name", "Raw B Paths"
+    }
+
+    charlie {
+      dimension "scenario"
+      applicationIdSuffix ".charlie"
+      targetSdkVersion 29
+      resValue "bool", "optOut", "false"
+      resValue "string", "app_name", "Raw C Paths"
+    }
+
+    delta {
+      dimension "scenario"
+      applicationIdSuffix ".delta"
+      targetSdkVersion 'R'
+      resValue "bool", "optOut", "true"
+      resValue "string", "app_name", "Raw D Paths"
+    }
+
+    echo {
+      dimension "scenario"
+      applicationIdSuffix ".echo"
+      targetSdkVersion 'R'
+      resValue "bool", "optOut", "false"
+      resValue "string", "app_name", "Raw E Paths"
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility 1.8
+    targetCompatibility 1.8
+  }
+
+  kotlinOptions {
+    jvmTarget = "1.8"
+  }
+
+  viewBinding {
+    enabled = true
+  }
+}
+
+dependencies {
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+  implementation "androidx.activity:activity-ktx:1.1.0"
+  implementation "androidx.appcompat:appcompat:$appcompat_version"
+  implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+  implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+  implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+  implementation "org.koin:koin-core:$koin_version"
+  implementation "org.koin:koin-android:$koin_version"
+  implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+}

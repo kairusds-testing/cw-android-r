@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">EmbedClient</string>
+  <string name="connect">Connect to Server</string>
+</resources>
