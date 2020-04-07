@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 
     setContentView(binding.root)
 
+    binding.surface.setZOrderOnTop(true)
+
     motor.surfacePackage.observe(this) {
       binding.surface.setChildSurfacePackage(it)
     }
@@ -47,6 +49,6 @@ class MainActivity : AppCompatActivity() {
     }
   }
 
-  private fun getDisplayId() =
-    getSystemService(DisplayManager::class.java).displays.first().displayId
+  private fun getDisplayId() = windowManager.defaultDisplay.displayId
+    // TODO replace with display.displayId in future R release
 }
