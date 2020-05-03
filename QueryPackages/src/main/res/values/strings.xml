@@ -1,0 +1,9 @@
+<resources>
+  <string name="apps">Installed Apps</string>
+  <string name="packages">Installed Packages</string>
+  <string name="internet">Packages Requesting INTERNET</string>
+  <string name="boot">ACTION_BOOT_COMPLETED Receivers</string>
+  <string name="launcher">Launcher Activities</string>
+  <string name="providers">Installed Providers</string>
+  <string name="menu_query_all">Query All</string>
+</resources>

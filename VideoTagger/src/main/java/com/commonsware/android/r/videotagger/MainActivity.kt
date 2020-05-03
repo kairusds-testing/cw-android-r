@@ -172,6 +172,7 @@ private class RowHolder(private val binding: RowBinding) :
   fun bind(model: VideoModel) {
     binding.title.text = model.title
     binding.tags.text = model.tags ?: "(no tags)"
+    binding.description.text = model.description ?: "(no description)"
     binding.selected.isChecked = model.isChecked
 
     binding.selected.setOnCheckedChangeListener { cb, isChecked ->
@@ -187,5 +188,6 @@ private object VideoModelDiffer : DiffUtil.ItemCallback<VideoModel>() {
   override fun areContentsTheSame(oldItem: VideoModel, newItem: VideoModel) =
     oldItem.title == newItem.title &&
         oldItem.tags == newItem.tags &&
+        oldItem.description == newItem.description &&
         oldItem.isChecked == newItem.isChecked
 }

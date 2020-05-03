@@ -17,12 +17,12 @@
 package com.commonsware.android.r.rawpaths
 
 import android.Manifest
-import android.app.AppOpsManager
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Environment
 import android.provider.Settings
 import android.view.*
 import android.widget.Toast
@@ -34,6 +34,7 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.*
 import com.commonsware.android.r.rawpaths.databinding.ActivityMainBinding
 import com.commonsware.android.r.rawpaths.databinding.RowBinding
+import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
     binding.list.adapter = adapter
 
     lifecycleScope.launch {
-      for (file in motor.copyErrors) {
+      motor.copyErrors.consumeEach { file ->
         Toast.makeText(
           this@MainActivity,
           "Error copying $file",
@@ -193,20 +194,7 @@ class MainActivity : AppCompatActivity() {
         PackageManager.PERMISSION_GRANTED
 
   @RequiresApi(Build.VERSION_CODES.Q)
-  private fun hasAllFilesPermission(): Boolean {
-    val appOpsManager: AppOpsManager =
-      getSystemService(AppOpsManager::class.java)!!
-
-    return try {
-      appOpsManager.unsafeCheckOpNoThrow(
-        "android:manage_external_storage",
-        android.os.Process.myUid(),
-        packageName
-      ) == AppOpsManager.MODE_ALLOWED
-    } catch (e: PackageManager.NameNotFoundException) {
-      false
-    }
-  }
+  private fun hasAllFilesPermission() = Environment.isExternalStorageManager()
 }
 
 class FilesAdapter(

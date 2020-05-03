@@ -36,4 +36,16 @@
     app:layout_constraintTop_toBottomOf="@id/title"
     app:layout_constraintVertical_bias="0"
     tools:text="This is supposed to be some tags" />
+
+  <TextView
+    android:id="@+id/description"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tags"
+    app:layout_constraintVertical_bias="0"
+    tools:text="This is also supposed to be some tags" />
 </androidx.constraintlayout.widget.ConstraintLayout>

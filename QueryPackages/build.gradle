@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+  compileSdkVersion 29
+
+  defaultConfig {
+    applicationId "com.commonsware.android.r.query"
+    minSdkVersion 21
+    targetSdkVersion 29
+    versionCode 1
+    versionName "1.0"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility 1.8
+    targetCompatibility 1.8
+  }
+
+  kotlinOptions {
+    jvmTarget = "1.8"
+  }
+
+  viewBinding {
+    enabled = true
+  }
+
+  flavorDimensions "scenario"
+
+  productFlavors {
+    alfa {
+      dimension "scenario"
+      applicationIdSuffix ".alfa"
+      targetSdkVersion 29
+      resValue "string", "app_name", "Query A Packages"
+    }
+
+    bravo {
+      dimension "scenario"
+      applicationIdSuffix ".bravo"
+      targetSdkVersion 'R'
+      resValue "string", "app_name", "Query B Packages"
+    }
+
+    charlie {
+      dimension "scenario"
+      applicationIdSuffix ".charlie"
+      targetSdkVersion 'R'
+      resValue "string", "app_name", "Query C Packages"
+    }
+
+    delta {
+      dimension "scenario"
+      applicationIdSuffix ".delta"
+      targetSdkVersion 'R'
+      resValue "string", "app_name", "Query D Packages"
+    }
+
+    echo {
+      dimension "scenario"
+      applicationIdSuffix ".echo"
+      targetSdkVersion 'R'
+      resValue "string", "app_name", "Query E Packages"
+    }
+  }
+}
+
+dependencies {
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+  implementation 'androidx.appcompat:appcompat:1.1.0'
+  implementation 'androidx.core:core-ktx:1.2.0'
+  implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+  implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+  implementation "androidx.recyclerview:recyclerview:1.2.0-alpha02"
+  implementation "org.koin:koin-core:$koin_version"
+  implementation "org.koin:koin-android:$koin_version"
+  implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+}

@@ -19,6 +19,7 @@ package com.commonsware.android.r.videotagger
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
+import android.net.Uri
 import android.provider.MediaStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -26,7 +27,8 @@ import kotlinx.coroutines.withContext
 private val PROJECTION = arrayOf(
   MediaStore.Video.Media._ID,
   MediaStore.Video.Media.DISPLAY_NAME,
-  MediaStore.Video.Media.TAGS
+  MediaStore.Video.Media.TAGS,
+  MediaStore.Video.Media.DESCRIPTION
 )
 private const val SORT_ORDER = MediaStore.Video.Media.TITLE
 
@@ -42,21 +44,45 @@ class VideoRepository(context: Context) {
         ?.use { cursor ->
           cursor.mapToList {
             VideoModel(
-              MediaStore.Video.Media.getContentUri(MediaStore.VOLUME_EXTERNAL, it.getLong(0)),
+              MediaStore.Video.Media.getContentUri(
+                MediaStore.VOLUME_EXTERNAL,
+                it.getLong(0)
+              ),
               it.getString(1),
-              it.getString(2)
+              it.getString(2),
+              it.getString(3)
             )
           }
         } ?: emptyList()
     }
 
-  suspend fun applyTags(models: List<VideoModel>, tags: String) =
+  suspend fun updateInfo(
+    models: List<VideoModel>,
+    tags: String
+  ) =
     withContext(Dispatchers.IO) {
+      val netTags = if (tags.isEmpty()) null else tags
       val values = ContentValues().apply {
-        put(MediaStore.Video.Media.TAGS, if (tags.isEmpty()) null else tags)
+        put(MediaStore.Video.Media.TAGS, netTags)
+        put(MediaStore.Video.Media.DESCRIPTION, "a test description")
       }
 
-      models.forEach { resolver.update(it.uri, values, null, null) }
+      models.forEach { setMetadata(it.uri, values) }
+    }
+
+  private suspend fun setMetadata(uri: Uri, values: ContentValues) =
+    withContext(Dispatchers.IO) {
+      val tempValues = ContentValues().apply {
+        put(MediaStore.Video.Media.IS_PENDING, 1)
+      }
+
+      resolver.update(uri, tempValues, null, null)
+
+      val updatedValues = ContentValues(values).apply {
+        put(MediaStore.Video.Media.IS_PENDING, 0)
+      }
+
+      resolver.update(uri, updatedValues, null, null)
     }
 
   private fun <T : Any> Cursor.mapToList(predicate: (Cursor) -> T): List<T> =

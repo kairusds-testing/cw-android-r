@@ -26,14 +26,16 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
+import java.util.concurrent.Executors
 
 private const val TAG = "PermissionCheck"
 private const val FEATURE_ID = "awesome-stuff"
 
 class MainApp : Application() {
   private val module = module {
-    viewModel { MainMotor(androidContext().createFeatureContext(FEATURE_ID)) }
+    viewModel { MainMotor(androidContext().createAttributionContext(FEATURE_ID)) }
   }
+  private val executor = Executors.newSingleThreadExecutor()
 
   override fun onCreate() {
     super.onCreate()
@@ -45,7 +47,7 @@ class MainApp : Application() {
     }
 
     getSystemService(AppOpsManager::class.java)
-      ?.setNotedAppOpsCollector(object : AppOpsManager.AppOpsCollector() {
+      ?.setOnOpNotedCallback(executor, object : AppOpsManager.OnOpNotedCallback() {
         override fun onNoted(op: SyncNotedAppOp) {
           Log.d(TAG, "onNoted: ${op.toDebugString()}")
           RuntimeException().printStackTrace(System.out)
@@ -64,8 +66,8 @@ class MainApp : Application() {
   }
 
   private fun SyncNotedAppOp.toDebugString() =
-    "SyncNotedAppOp[featureId = $featureId, op = $op"
+    "SyncNotedAppOp[attributionTag = $attributionTag, op = $op"
 
   private fun AsyncNotedAppOp.toDebugString() =
-    "AsyncNotedAppOp[featureId = $featureId, op = $op, time = $time, uid = $notingUid, message = $message"
+    "AsyncNotedAppOp[attributionTag = $attributionTag, op = $op, time = $time, uid = $notingUid, message = $message"
 }

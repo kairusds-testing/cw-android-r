@@ -13,12 +13,15 @@
   <string name="reason_anr">ANR</string>
   <string name="reason_crash">Crash</string>
   <string name="reason_crash_native">Native Crash</string>
+  <string name="reason_dependency_died">Dependency Died</string>
   <string name="reason_excessive_resource_usage">Excessive Resource Usage</string>
   <string name="reason_exit_self">Self-Destruct (%d)</string>
   <string name="reason_init_failure">Init Failure</string>
   <string name="reason_low_memory">Low Memory</string>
   <string name="reason_permission_change">Permission Change</string>
   <string name="reason_signaled">OS Signal</string>
+  <string name="reason_user_requested">User Requested</string>
+  <string name="reason_user_stopped">User Stopped</string>
   <string name="reason_other">Other</string>
   <string name="importance">Importance:</string>
   <string name="memory">Memory (PSS/RSS):</string>

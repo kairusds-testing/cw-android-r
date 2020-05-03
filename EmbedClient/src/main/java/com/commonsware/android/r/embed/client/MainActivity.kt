@@ -16,7 +16,6 @@
 
 package com.commonsware.android.r.embed.client
 
-import android.hardware.display.DisplayManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe

@@ -83,7 +83,7 @@ private class ViewHandler(
           .getDisplay(displayId)
 
         host = SurfaceControlViewHost(context, display, hostToken).apply {
-          addView(binding.root, width, height)
+          setView(binding.root, width, height)
 
           val pkg = surfacePackage
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.commonsware.android.r.bubble"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="com.commonsware.android.r.bubble">
 
   <application
     android:allowBackup="false"
@@ -24,6 +24,10 @@
       android:allowEmbedded="true"
       android:documentLaunchMode="always"
       android:resizeableActivity="true" />
+
+    <service
+      android:name=".BubbleService"
+      android:permission="android.permission.BIND_JOB_SERVICE" />
   </application>
 
 </manifest>

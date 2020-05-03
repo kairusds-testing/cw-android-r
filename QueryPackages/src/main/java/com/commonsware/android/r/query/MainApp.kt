@@ -14,14 +14,27 @@
   https://commonsware.com/R
 */
 
-package com.commonsware.android.r.videotagger
+package com.commonsware.android.r.query
 
-import android.net.Uri
+import android.app.Application
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.context.startKoin
+import org.koin.dsl.module
 
-data class VideoModel(
-  val uri: Uri,
-  val title: String,
-  val tags: String?,
-  val description: String?,
-  var isChecked: Boolean = false
-)
+class MainApp : Application() {
+  private val module = module {
+    viewModel { MainMotor(androidContext()) }
+  }
+
+  override fun onCreate() {
+    super.onCreate()
+
+    startKoin {
+      androidLogger()
+      androidContext(this@MainApp)
+      modules(module)
+    }
+  }
+}

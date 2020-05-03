@@ -51,7 +51,7 @@ class MainMotor(private val repo: VideoRepository) : ViewModel() {
     _states.value = MainViewState.Loading
 
     viewModelScope.launch(Dispatchers.Main) {
-      repo.applyTags(models, tags)
+      repo.updateInfo(models, tags)
       loadVideos()
     }
   }

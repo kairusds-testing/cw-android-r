@@ -80,6 +80,7 @@ class MainMotor(private val context: Context) : ViewModel() {
     ApplicationExitInfo.REASON_ANR -> R.string.reason_anr
     ApplicationExitInfo.REASON_CRASH -> R.string.reason_crash
     ApplicationExitInfo.REASON_CRASH_NATIVE -> R.string.reason_crash_native
+    ApplicationExitInfo.REASON_DEPENDENCY_DIED -> R.string.reason_dependency_died
     ApplicationExitInfo.REASON_EXCESSIVE_RESOURCE_USAGE -> R.string.reason_excessive_resource_usage
     ApplicationExitInfo.REASON_EXIT_SELF -> R.string.reason_exit_self
     ApplicationExitInfo.REASON_INITIALIZATION_FAILURE -> R.string.reason_init_failure
@@ -87,6 +88,8 @@ class MainMotor(private val context: Context) : ViewModel() {
     ApplicationExitInfo.REASON_OTHER -> R.string.reason_other
     ApplicationExitInfo.REASON_PERMISSION_CHANGE -> R.string.reason_permission_change
     ApplicationExitInfo.REASON_SIGNALED -> R.string.reason_signaled
+    ApplicationExitInfo.REASON_USER_REQUESTED -> R.string.reason_user_requested
+    ApplicationExitInfo.REASON_USER_STOPPED -> R.string.reason_user_stopped
     else -> R.string.shrug
   }
 }
