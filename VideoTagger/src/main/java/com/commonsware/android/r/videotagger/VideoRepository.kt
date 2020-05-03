@@ -44,13 +44,13 @@ class VideoRepository(context: Context) {
         ?.use { cursor ->
           cursor.mapToList {
             VideoModel(
-              MediaStore.Video.Media.getContentUri(
+              uri = MediaStore.Video.Media.getContentUri(
                 MediaStore.VOLUME_EXTERNAL,
                 it.getLong(0)
               ),
-              it.getString(1),
-              it.getString(2),
-              it.getString(3)
+              title = it.getString(1),
+              tags = it.getString(2),
+              description = it.getString(3)
             )
           }
         } ?: emptyList()
