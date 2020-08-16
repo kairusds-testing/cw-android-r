@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">DynFilter</string>
+  <string name="mime_types">MIME Types</string>
+  <string name="mime_types_dialog_title">Choose MIME Types to Support</string>
+  <string name="menu_prefs">Settings</string>
+  <string name="mimeTypesKey">mimeTypesKey</string>
+</resources>

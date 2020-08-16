@@ -9,7 +9,7 @@
   OF ANY KIND, either express or implied. See the License for the specific
   language governing permissions and limitations under the License.
 
-  Covered in detail in the book _Elements of Android R
+  Covered in detail in the book _Elements of Android R_
 
   https://commonsware.com/R
 */
@@ -68,8 +68,8 @@ class MainMotor(private val context: Context) : ViewModel() {
     return withContext(executor.asCoroutineDispatcher()) {
       suspendCoroutine<Location> { continuation ->
         val consumer =
-          Consumer<Location> { location ->
-            if (isActive) continuation.resume(location)
+          Consumer<Location?> { location ->
+            if (isActive && location != null) continuation.resume(location)
           }
 
         locationManager.getCurrentLocation(

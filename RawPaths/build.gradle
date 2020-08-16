@@ -3,8 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-  compileSdkVersion 'android-R'
-  buildToolsVersion "30.0.0 rc2"
+  compileSdkVersion 30
+  buildToolsVersion "30.0.1"
 
   defaultConfig {
     applicationId "com.commonsware.android.r.rawpaths"
@@ -51,7 +51,7 @@ android {
     delta {
       dimension "scenario"
       applicationIdSuffix ".delta"
-      targetSdkVersion 'R'
+      targetSdkVersion 30
       resValue "bool", "optOut", "true"
       resValue "string", "app_name", "Raw D Paths"
     }
@@ -59,7 +59,7 @@ android {
     echo {
       dimension "scenario"
       applicationIdSuffix ".echo"
-      targetSdkVersion 'R'
+      targetSdkVersion 30
       resValue "bool", "optOut", "false"
       resValue "string", "app_name", "Raw E Paths"
     }

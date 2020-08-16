@@ -46,28 +46,28 @@ android {
     bravo {
       dimension "scenario"
       applicationIdSuffix ".bravo"
-      targetSdkVersion 'R'
+      targetSdkVersion 30
       resValue "string", "app_name", "Query B Packages"
     }
 
     charlie {
       dimension "scenario"
       applicationIdSuffix ".charlie"
-      targetSdkVersion 'R'
+      targetSdkVersion 30
       resValue "string", "app_name", "Query C Packages"
     }
 
     delta {
       dimension "scenario"
       applicationIdSuffix ".delta"
-      targetSdkVersion 'R'
+      targetSdkVersion 30
       resValue "string", "app_name", "Query D Packages"
     }
 
     echo {
       dimension "scenario"
       applicationIdSuffix ".echo"
-      targetSdkVersion 'R'
+      targetSdkVersion 30
       resValue "string", "app_name", "Query E Packages"
     }
   }
@@ -75,8 +75,8 @@ android {
 
 dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-  implementation 'androidx.appcompat:appcompat:1.1.0'
-  implementation 'androidx.core:core-ktx:1.2.0'
+  implementation 'androidx.appcompat:appcompat:1.2.0'
+  implementation 'androidx.core:core-ktx:1.3.1'
   implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
   implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
   implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"

@@ -9,7 +9,7 @@
   OF ANY KIND, either express or implied. See the License for the specific
   language governing permissions and limitations under the License.
 
-  Covered in detail in the book _Elements of Android R
+  Covered in detail in the book _Elements of Android R_
 
   https://commonsware.com/R
 */
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
     if (item.itemId == R.id.allAccess) {
-      if (Build.VERSION.SDK_INT >= 29 && Build.VERSION.PREVIEW_SDK_INT > 0) {
+      if (Build.VERSION.SDK_INT >= 30) {
         if (hasAllFilesPermission()) {
           Toast.makeText(this, R.string.already_permission, Toast.LENGTH_LONG)
             .show()

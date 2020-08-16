@@ -1,8 +1,0 @@
-<resources>
-  <string name="app_name">Bubble Demo</string>
-  <string name="show_bubble">Show Bubble</string>
-  <string name="cancel_notification">Cancel Notification</string>
-  <string name="show_bubble_now">Show Bubble Now</string>
-  <string name="launch_adjacent">Launch Adjacent</string>
-  <string name="show_from_service">Show From Service</string>
-</resources>

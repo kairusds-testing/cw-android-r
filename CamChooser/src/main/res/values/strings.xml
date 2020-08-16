@@ -1,0 +1,9 @@
+<resources>
+  <string name="app_name">CamChooser</string>
+  <string name="caption_image">ACTION_IMAGE_CAPTURE</string>
+  <string name="caption_imageSecure">ACTION_IMAGE_CAPTURE_SECURE</string>
+  <string name="caption_video">ACTION_CAPTURE_VIDEO</string>
+  <string name="caption_imageOutput">ACTION_IMAGE_CAPTURE + EXTRA_OUTPUT</string>
+  <string name="caption_imageSecureOutput">ACTION_IMAGE_CAPTURE_SECURE + EXTRA_OUTPUT</string>
+  <string name="caption_videoOutput">ACTION_CAPTURE_VIDEO + EXTRA_OUTPUT</string>
+</resources>

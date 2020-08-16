@@ -9,7 +9,7 @@
   OF ANY KIND, either express or implied. See the License for the specific
   language governing permissions and limitations under the License.
 
-  Covered in detail in the book _Elements of Android R
+  Covered in detail in the book _Elements of Android R_
 
   https://commonsware.com/R
 */
@@ -69,12 +69,11 @@ class MainMotor(private val context: Context) : ViewModel() {
 
       conn?.messenger?.send(Message.obtain().apply {
         data = bundleOf(
+          KEY_HOST_TOKEN to hostToken,
           KEY_DISPLAY_ID to displayId,
           KEY_WIDTH to width,
           KEY_HEIGHT to height
-        ).apply {
-          putBinder(KEY_HOST_TOKEN, hostToken)
-        }
+        )
         replyTo = messenger
       })
     }

@@ -9,7 +9,7 @@
   OF ANY KIND, either express or implied. See the License for the specific
   language governing permissions and limitations under the License.
 
-  Covered in detail in the book _Elements of Android R
+  Covered in detail in the book _Elements of Android R_
 
   https://commonsware.com/R
 */
@@ -79,7 +79,7 @@ class MainMotor(context: Context) : ViewModel() {
   }
 
   fun loadRoot(volumeIndex: Int = 0) {
-    if (Build.VERSION.SDK_INT <= 30) {
+    if (Build.VERSION.SDK_INT < 30) {
       load(Environment.getExternalStorageDirectory())
     } else {
       load(volumes[volumeIndex].directory!!)

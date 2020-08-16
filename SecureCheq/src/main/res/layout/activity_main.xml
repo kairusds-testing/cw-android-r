@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="8dp">
+
+  <RadioGroup
+    android:id="@+id/authenticators"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <RadioButton
+      android:id="@+id/strong"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:checked="true"
+      android:enabled="@bool/isR"
+      android:text="@string/btn_strong"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <RadioButton
+      android:id="@+id/weak"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:checked="false"
+      android:enabled="@bool/isR"
+      android:text="@string/btn_weak"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <RadioButton
+      android:id="@+id/credential"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:checked="false"
+      android:enabled="@bool/isR"
+      android:text="@string/btn_credential"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+  </RadioGroup>
+
+  <ImageButton
+    android:id="@+id/fingerprint"
+    android:layout_width="160dp"
+    android:layout_height="160dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:contentDescription="@string/fingerprint"
+    android:scaleType="fitCenter"
+    android:src="@drawable/ic_fingerprint_black_24dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/authenticators" />
+</androidx.constraintlayout.widget.ConstraintLayout>

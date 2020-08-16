@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/viewerFragment">
+
+  <fragment
+    android:id="@+id/viewerFragment"
+    android:name="com.commonsware.android.r.dynfilter.ViewerFragment"
+    android:label="@string/app_name">
+    <action
+      android:id="@+id/editPrefs"
+      app:destination="@id/prefsFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/prefsFragment"
+    android:name="com.commonsware.android.r.dynfilter.PrefsFragment"
+    android:label="@string/app_name" />
+</navigation>

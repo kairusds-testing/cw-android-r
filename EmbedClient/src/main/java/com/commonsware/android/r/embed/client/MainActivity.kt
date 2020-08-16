@@ -9,7 +9,7 @@
   OF ANY KIND, either express or implied. See the License for the specific
   language governing permissions and limitations under the License.
 
-  Covered in detail in the book _Elements of Android R
+  Covered in detail in the book _Elements of Android R_
 
   https://commonsware.com/R
 */
@@ -41,13 +41,10 @@ class MainActivity : AppCompatActivity() {
     binding.connect.setOnClickListener {
       motor.bind(
         binding.surface.hostToken,
-        getDisplayId(),
+        binding.surface.display.displayId,
         binding.surface.width,
         binding.surface.height
       )
     }
   }
-
-  private fun getDisplayId() = windowManager.defaultDisplay.displayId
-    // TODO replace with display.displayId in future R release
 }

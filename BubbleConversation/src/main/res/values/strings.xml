@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">BubbleConversation</string>
+  <string name="caption_button">Start a Conversation</string>
+</resources>

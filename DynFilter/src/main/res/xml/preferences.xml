@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <MultiSelectListPreference
+    android:dialogTitle="@string/mime_types_dialog_title"
+    android:entries="@array/types"
+    android:entryValues="@array/types"
+    android:key="@string/mimeTypesKey"
+    android:title="@string/mime_types" />
+
+</PreferenceScreen>
