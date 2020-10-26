@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="types">
+    <item>application/pdf</item>
+    <item>image/jpeg</item>
+    <item>text/plain</item>
+  </string-array>
+</resources>

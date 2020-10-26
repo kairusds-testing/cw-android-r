@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">Take Control</string>
+  <string name="serviceLabel">Take Control Demo</string>
+  <string name="defaultMessage">Hi!</string>
+  <string name="toggleTitle">Sample Toggle</string>
+  <string name="rangeTitle">Sample Range</string>
+  <string name="subtitle">(this is a subtitle)</string>
+</resources>
